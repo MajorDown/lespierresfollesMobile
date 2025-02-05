@@ -1,15 +1,11 @@
 import { Text, StyleSheet } from 'react-native';
 import AppPage from '@/components/ui/AppPage';
+import AppText from '@/components/ui/AppText';
 
-
-export default function HomeScreen() {
+const HomeScreen = () => {
   return (<AppPage>
-    <Text style={styles.text}>page home</Text>
+    <AppText type='title'>Les Pierres Folles</AppText>
   </AppPage>);
 }
 
-const styles = StyleSheet.create({
-  text: {
-    color: 'white'
-  }
-});
+export default HomeScreen;
