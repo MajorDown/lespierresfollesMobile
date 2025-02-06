@@ -4,7 +4,7 @@ import AppText from '@/components/ui/AppText';
 
 const HomeScreen = () => {
   return (<AppPage>
-    <AppText type='title'>Les Pierres Folles</AppText>
+    <AppText type='title'>page home</AppText>
   </AppPage>);
 }
 
