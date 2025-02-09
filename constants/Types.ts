@@ -42,7 +42,7 @@ export type Site = {
     }[];
 }
 
-export type user = {
+export type User = {
     email: string,
     userId: string,
     password: string,
