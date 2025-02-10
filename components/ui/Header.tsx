@@ -1,14 +1,22 @@
 import {Text, View, StyleSheet} from 'react-native';
 import ParamButton from './ParamButton';
 import { usePathname } from 'expo-router';
+import HomeButton from './HomeButton';
 
-const Header = () => {
+/*
+* @description Header de l'application
+* @return {JSX.Element}
+*/
+const Header = (): JSX.Element => {
     const actualPath = usePathname();
-    // si la page actuelle est settings, alors le parambutton ne doit pas s'afficher
 
     return (<View style={Styles.header}>
-        <Text style={Styles.title}>Les Pierres Folles</Text>
-        {actualPath !== '/settings' && <ParamButton />}
+        <Text 
+            style={Styles.title}
+        >
+            Les Pierres Folles
+        </Text>
+        {actualPath !== '/settings' ? <ParamButton /> : <HomeButton />}
     </View>
     )
 }
@@ -24,9 +32,13 @@ const Styles = StyleSheet.create({
 
     },
     title: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: 'grey',
+        fontFamily: 'Mynerve',
+        fontSize: 30,
+        letterSpacing: -0.5,
+        color: 'green',
+        textShadowColor: 'black',
+        textShadowRadius: 2,
+        textShadowOffset: {width: 1, height: 1}
     }
 })
 

@@ -1,26 +1,24 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack, useNavigation } from 'expo-router';
+import { useFonts, Mynerve_400Regular } from '@expo-google-fonts/mynerve';
+import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import 'react-native-reanimated';
 import { useColorScheme } from '@/hooks/useColorScheme';
-import ParamButton from '@/components/ui/ParamButton';
-import { Button, Image, TouchableOpacity, Text } from 'react-native';
 import Header from '@/components/ui/Header';
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 const RootLayout = () => {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    'Mynerve': Mynerve_400Regular,
   });
 
   useEffect(() => {
     if (loaded) {
+      console.log('✅ Font Mynerve chargée avec expo-google-fonts !');
       SplashScreen.hideAsync();
     }
   }, [loaded]);

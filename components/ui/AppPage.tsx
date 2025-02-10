@@ -2,7 +2,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { PropsWithChildren } from "react";
 import { StyleSheet } from "react-native";
 
-const AppPage = (props: PropsWithChildren) => {
+/*
+ * @description Wrapper de page pour les composants de l'application
+ * @param {PropsWithChildren} props
+ * @returns {JSX.Element}
+ */
+const AppPage = (props: PropsWithChildren): JSX.Element => {
     return (<SafeAreaView
         style={styles.container}
     >
