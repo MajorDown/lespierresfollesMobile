@@ -17,10 +17,7 @@ const RootLayout = () => {
   });
 
   useEffect(() => {
-    if (loaded) {
-      console.log('✅ Font Mynerve chargée avec expo-google-fonts !');
-      SplashScreen.hideAsync();
-    }
+    if (loaded) SplashScreen.hideAsync();
   }, [loaded]);
 
   if (!loaded) {

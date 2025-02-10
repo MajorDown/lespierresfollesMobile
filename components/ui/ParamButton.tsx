@@ -1,7 +1,11 @@
 import {Pressable, StyleSheet, Image} from 'react-native';
 import { router } from 'expo-router';
 
-const ParamButton = () => {
+/*
+ * @description composant qui permet de naviguer vers la page des paramètres
+ * @return {JSX.Element} le composant ParamButton
+*/
+const ParamButton = (): JSX.Element => {
     const handleNavigate = () => {
         router.push("/settings");
     }

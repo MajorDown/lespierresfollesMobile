@@ -1,5 +1,6 @@
 import { Text, StyleSheet } from "react-native";
 import { PropsWithChildren } from "react";
+import { appColors } from "@/constants/Colors";
 
 type Props = PropsWithChildren<{
     type?: 'title' | 'subtitle' | 'text' | 'link';
@@ -21,20 +22,20 @@ const AppText = ({type = 'text', ...props}: Props) => {
 
 const styles = StyleSheet.create({
     text: {
-        color: 'white'
+        color: appColors.text,
     },
     title: {
-        color: 'white',
+        color: appColors.text,
         fontSize: 24,
         fontWeight: 'bold'
     },
     subtitle: {
-        color: 'white',
+        color: appColors.text,
         fontSize: 18,
         fontWeight: 'bold'
     },
     link: {
-        color: 'blue',
+        color: appColors.button,
         fontSize: 16,
         fontWeight: 'bold'
     }

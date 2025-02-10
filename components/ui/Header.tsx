@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, Image, View, StyleSheet} from 'react-native';
 import ParamButton from './ParamButton';
 import { usePathname } from 'expo-router';
 import HomeButton from './HomeButton';
@@ -11,14 +11,19 @@ const Header = (): JSX.Element => {
     const actualPath = usePathname();
 
     return (<View style={Styles.header}>
-        <Text 
-            style={Styles.title}
-        >
-            Les Pierres Folles
-        </Text>
+        <View style={Styles.headerTitle}>
+            <Text 
+                style={Styles.title}
+            >
+                Les Pierres Folles
+            </Text>
+            <Image
+                source={require('@/assets/images/monument.png')}
+                style={{width: 15, height: 30}}
+            />
+        </View>
         {actualPath !== '/settings' ? <ParamButton /> : <HomeButton />}
-    </View>
-    )
+    </View>)
 }
 
 const Styles = StyleSheet.create({
@@ -28,14 +33,20 @@ const Styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: 'white',
+        backgroundColor: 'transparent',
 
+    },
+    headerTitle: {
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        gap: 10
     },
     title: {
         fontFamily: 'Mynerve',
         fontSize: 30,
         letterSpacing: -0.5,
-        color: 'green',
+        color: 'white',
         textShadowColor: 'black',
         textShadowRadius: 2,
         textShadowOffset: {width: 1, height: 1}
