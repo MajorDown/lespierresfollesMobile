@@ -2,6 +2,8 @@ import {Text, Image, View, StyleSheet} from 'react-native';
 import ParamButton from './ParamButton';
 import { usePathname } from 'expo-router';
 import HomeButton from './HomeButton';
+import AppText from './AppText';
+import { appColors } from '@/constants/Colors';
 
 /*
 * @description Header de l'application
@@ -12,11 +14,7 @@ const Header = (): JSX.Element => {
 
     return (<View style={Styles.header}>
         <View style={Styles.headerTitle}>
-            <Text 
-                style={Styles.title}
-            >
-                Les Pierres Folles
-            </Text>
+            <AppText type='title'>Les Pierres Folles</AppText>
             <Image
                 source={require('@/assets/images/monument.png')}
                 style={{width: 15, height: 30}}
@@ -33,7 +31,7 @@ const Styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: 'transparent',
+        backgroundColor: appColors.background
 
     },
     headerTitle: {

@@ -25,9 +25,14 @@ const styles = StyleSheet.create({
         color: appColors.text,
     },
     title: {
+        fontFamily: 'Mynerve',
+        fontSize: 30,
+        letterSpacing: -0.5,
         color: appColors.text,
-        fontSize: 24,
-        fontWeight: 'bold'
+        textShadowColor: 'black',
+        textShadowRadius: 2,
+        textShadowOffset: {width: 1, height: 1}
+
     },
     subtitle: {
         color: appColors.text,

@@ -1,6 +1,5 @@
-import { SafeAreaView } from "react-native-safe-area-context";
 import { PropsWithChildren } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, ImageBackground, View } from "react-native";
 
 /*
  * @description Wrapper de page pour les composants de l'application
@@ -8,18 +7,31 @@ import { StyleSheet } from "react-native";
  * @returns {JSX.Element}
  */
 const AppPage = (props: PropsWithChildren): JSX.Element => {
-    return (<SafeAreaView
+    return (<ImageBackground
+        source={require('@/assets/images/background.jpg')}
         style={styles.container}
+        resizeMode="cover"
     >
         {props.children}
-    </SafeAreaView>);
+    </ImageBackground>);
 }
 
 const styles = StyleSheet.create({
     container: {
+        width: '100%',
+        height: '100%',
         flex: 1,
         alignItems: 'center',
         justifyContent: 'flex-start',
+        backgroundColor: 'black',
+        padding: 0,
+    },
+    image: {
+        width: '100%',
+        height: '100%',
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'flex-start',        
     }
 });
 

@@ -5,13 +5,12 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import {appColors} from '@/constants/Colors';
 import Header from '@/components/ui/Header';
 
 SplashScreen.preventAutoHideAsync();
 
 const RootLayout = () => {
-  const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     'Mynerve': Mynerve_400Regular,
   });
@@ -24,16 +23,15 @@ const RootLayout = () => {
     return null;
   }
 
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <StatusBar style="auto" />
-      <Stack>
+  return (<>
+      <StatusBar style="dark" />
+      <Stack> 
         <Stack.Screen name="(tabs)" options={{header: () => <Header />}} />
         <Stack.Screen name="+not-found" options={{header: () => <Header />}}/>
         <Stack.Screen name="settings" options={{header: () => <Header />}}/>
       </Stack>
-    </ThemeProvider>
-  );
+  </>)
+
 }
 
 export default RootLayout;
