@@ -6,14 +6,15 @@ import TabsIcon from '@/components/ui/TabsIcon';
 const Routes = [
   {
     name: 'index',
-    icon: 'Home'
+    title: 'Home',
+    icon: require('@/assets/images/home.png'),
   },
   {
-    name: 'Recherche',
-    icon: 'Search'
+    name: 'AddNewSite',
+    title: 'ajouter',
+    icon: require('@/assets/images/addNew.png'),
   }
 ]
-
 
 const TabLayout = () => {
 
@@ -34,18 +35,19 @@ const TabLayout = () => {
             backgroundColor: appColors.background,
             borderTopWidth: 0,
           },
-        }),
+        })
       }}>
-        {Routes.map((route, index) => (
-          <Tabs.Screen
-            name={route.name}
-            options={{
-              tabBarIcon: () => (
-                <TabsIcon title={route.icon} />
-              ),
-            }}
-          />
-        ))}
+      {Routes.map((route) => (
+        <Tabs.Screen
+          name={route.name}
+          options={
+            {
+              title: route.title,
+              tabBarIcon: () => <TabsIcon title={route.title} icon={route.icon} />
+            }
+          }
+        />
+      ))}
     </Tabs>
   );
 }
