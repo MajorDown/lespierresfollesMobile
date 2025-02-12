@@ -11,7 +11,7 @@ const Routes = [
   },
   {
     name: 'AddNewSite',
-    title: 'ajouter',
+    title: 'Ajouter',
     icon: require('@/assets/images/addNew.png'),
   }
 ]
@@ -39,6 +39,7 @@ const TabLayout = () => {
       }}>
       {Routes.map((route) => (
         <Tabs.Screen
+          key={route.name}
           name={route.name}
           options={
             {

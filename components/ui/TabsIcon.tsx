@@ -18,7 +18,6 @@ const TabsIcon = (props: Props):JSX.Element => {
     return (<View style={Styles.container}>
         {actualPath === `/${props.title}` && <View style={Styles.blower} />}
         <Image source={props.icon} style={Styles.image} />
-        {/* <Text style={Styles.text}>{props.title}</Text> */}
     </View>)
 }
 

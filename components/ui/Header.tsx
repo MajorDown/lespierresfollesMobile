@@ -14,11 +14,11 @@ const Header = (): JSX.Element => {
 
     return (<View style={Styles.header}>
         <View style={Styles.headerTitle}>
-            <AppText type='title'>Les Pierres Folles</AppText>
             <Image
-                source={require('@/assets/images/monument.png')}
-                style={{width: 15, height: 30}}
+                source={require('@/assets/images/logo.png')}
+                style={{width: 35, height: 35}}
             />
+            <AppText type='title'>Les Pierres Folles</AppText>
         </View>
         {actualPath !== '/settings' ? <ParamButton /> : <HomeButton />}
     </View>)
@@ -38,16 +38,6 @@ const Styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
-        gap: 10
-    },
-    title: {
-        fontFamily: 'Mynerve',
-        fontSize: 30,
-        letterSpacing: -0.5,
-        color: 'white',
-        textShadowColor: 'black',
-        textShadowRadius: 2,
-        textShadowOffset: {width: 1, height: 1}
     }
 })
 
