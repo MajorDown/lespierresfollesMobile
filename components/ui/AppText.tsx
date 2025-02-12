@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     title: {
         fontFamily: 'Mynerve',
         fontSize: 30,
-        letterSpacing: -0.5,
+        letterSpacing: -1,
         color: appColors.text,
         textShadowColor: 'black',
         textShadowRadius: 2,

@@ -4,7 +4,6 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-import Header from '@/components/ui/Header';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -22,11 +21,16 @@ const RootLayout = () => {
   }
 
   return (<>
-      <StatusBar style="dark" />
-      <Stack> 
-        <Stack.Screen name="(tabs)" options={{header: () => <Header />}} />
-        <Stack.Screen name="+not-found" options={{header: () => <Header />}}/>
-        <Stack.Screen name="settings" options={{header: () => <Header />}}/>
+      <StatusBar style="light" />
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          animation: 'fade'
+        }}
+      > 
+        <Stack.Screen name="main"  />
+        <Stack.Screen name="+not-found" />
+        <Stack.Screen name="settings" />
       </Stack>
   </>)
 

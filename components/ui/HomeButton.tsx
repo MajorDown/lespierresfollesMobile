@@ -1,4 +1,5 @@
-import {Pressable, StyleSheet, Image} from 'react-native';
+import {Pressable, StyleSheet, Image, Text} from 'react-native';
+import { appColors } from '@/constants/Colors';
 import { router } from 'expo-router';
 
 /*
@@ -7,7 +8,7 @@ import { router } from 'expo-router';
  */
 const HomeButton = (): JSX.Element => {
     const handleNavigate = () => {
-        router.push("/(tabs)");
+        router.push("/main");
     }
     return (
         <Pressable 
@@ -16,6 +17,7 @@ const HomeButton = (): JSX.Element => {
             accessibilityLabel="Home"
         >
             <Image style={styles.image} source={require('@/assets/images/home.png')} />
+            <Text style={styles.text}>Home</Text>
         </Pressable>
     )
 }
@@ -31,6 +33,10 @@ const styles = StyleSheet.create({
     image: {
         width: 30,
         height: 30,
+    },
+    text: {
+        color: appColors.text,
+        fontSize: 10,
     }
 })
 

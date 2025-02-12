@@ -3,7 +3,6 @@ import ParamButton from './ParamButton';
 import { usePathname } from 'expo-router';
 import HomeButton from './HomeButton';
 import AppText from './AppText';
-import { appColors } from '@/constants/Colors';
 
 /*
 * @description Header de l'application
@@ -11,6 +10,7 @@ import { appColors } from '@/constants/Colors';
 */
 const Header = (): JSX.Element => {
     const actualPath = usePathname();
+    console.log(actualPath);
 
     return (<View style={Styles.header}>
         <View style={Styles.headerTitle}>
@@ -20,18 +20,18 @@ const Header = (): JSX.Element => {
             />
             <AppText type='title'>Les Pierres Folles</AppText>
         </View>
-        {actualPath !== '/settings' ? <ParamButton /> : <HomeButton />}
+        {actualPath === '/settings' ? <HomeButton /> : <ParamButton />}
     </View>)
 }
 
 const Styles = StyleSheet.create({
     header: {
+        width: '100%',
         marginTop: 30,
         padding: 10,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: appColors.background
 
     },
     headerTitle: {

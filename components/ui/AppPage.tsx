@@ -1,5 +1,6 @@
 import { PropsWithChildren } from "react";
 import { StyleSheet, ImageBackground, View } from "react-native";
+import Header from "./Header";
 
 /*
  * @description Wrapper de page pour les composants de l'application
@@ -12,6 +13,7 @@ const AppPage = (props: PropsWithChildren): JSX.Element => {
         style={styles.container}
         resizeMode="cover"
     >
+        <Header />
         {props.children}
     </ImageBackground>);
 }

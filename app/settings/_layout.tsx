@@ -3,20 +3,20 @@ import { Platform } from 'react-native';
 import { appColors } from '@/constants/Colors';
 import TabsIcon from '@/components/ui/TabsIcon';
 
-const Routes = [
+const SettingsRoutes = [
   {
     name: 'index',
-    title: 'Home',
+    title: 'Général',
     icon: require('@/assets/images/home.png'),
   },
   {
-    name: 'AddNewSite',
-    title: 'Ajouter',
-    icon: require('@/assets/images/addNew.png'),
+    name: 'Account',
+    title: 'Compte',
+    icon: require('@/assets/images/home.png'),
   }
 ]
 
-const TabLayout = () => {
+const SettingsLayout = () => {
 
   return (
     <Tabs
@@ -37,7 +37,7 @@ const TabLayout = () => {
           },
         })
       }}>
-      {Routes.map((route) => (
+      {SettingsRoutes.map((route) => (
         <Tabs.Screen
           key={route.name}
           name={route.name}
@@ -53,4 +53,4 @@ const TabLayout = () => {
   );
 }
 
-export default TabLayout;
+export default SettingsLayout;
