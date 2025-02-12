@@ -1,7 +1,19 @@
 import { Tabs } from 'expo-router';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { Platform } from 'react-native';
 import { appColors } from '@/constants/Colors';
+import TabsIcon from '@/components/ui/TabsIcon';
+
+const Routes = [
+  {
+    name: 'index',
+    icon: 'Home'
+  },
+  {
+    name: 'Recherche',
+    icon: 'Search'
+  }
+]
+
 
 const TabLayout = () => {
 
@@ -24,13 +36,16 @@ const TabLayout = () => {
           },
         }),
       }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <MaterialIcons color={color} size={20} name={'home'} />,
-        }}
-      />
+        {Routes.map((route, index) => (
+          <Tabs.Screen
+            name={route.name}
+            options={{
+              tabBarIcon: () => (
+                <TabsIcon title={route.icon} />
+              ),
+            }}
+          />
+        ))}
     </Tabs>
   );
 }

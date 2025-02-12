@@ -1,11 +1,9 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts, Mynerve_400Regular } from '@expo-google-fonts/mynerve';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-import {appColors} from '@/constants/Colors';
 import Header from '@/components/ui/Header';
 
 SplashScreen.preventAutoHideAsync();
