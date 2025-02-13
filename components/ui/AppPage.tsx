@@ -1,4 +1,4 @@
-import { PropsWithChildren, useCallback } from "react";
+import { PropsWithChildren, useEffect } from "react";
 import { StyleSheet, ImageBackground } from "react-native";
 import Header from "./Header";
 
