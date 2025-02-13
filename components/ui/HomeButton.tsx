@@ -8,7 +8,7 @@ import { router } from 'expo-router';
  */
 const HomeButton = (): JSX.Element => {
     const handleNavigate = () => {
-        router.push("/main");
+        router.replace("/(main)");
     }
     return (
         <Pressable 

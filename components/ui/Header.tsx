@@ -20,7 +20,7 @@ const Header = (): JSX.Element => {
             />
             <AppText type='title'>Les Pierres Folles</AppText>
         </View>
-        {actualPath === '/settings' ? <HomeButton /> : <ParamButton />}
+        {actualPath.includes('settings') ? <HomeButton /> : <ParamButton />}
     </View>)
 }
 

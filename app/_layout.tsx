@@ -28,7 +28,7 @@ const RootLayout = () => {
           animation: 'fade'
         }}
       > 
-        <Stack.Screen name="main"  />
+        <Stack.Screen name="(main)"  />
         <Stack.Screen name="+not-found" />
         <Stack.Screen name="settings" />
       </Stack>

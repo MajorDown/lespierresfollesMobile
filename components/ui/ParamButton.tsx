@@ -7,7 +7,7 @@ import { router } from 'expo-router';
 */
 const ParamButton = (): JSX.Element => {
     const handleNavigate = () => {
-        router.push("/settings");
+        router.replace("/settings");
     }
     return (
         <Pressable 

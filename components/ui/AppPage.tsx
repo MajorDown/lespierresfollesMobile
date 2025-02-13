@@ -1,5 +1,5 @@
-import { PropsWithChildren } from "react";
-import { StyleSheet, ImageBackground, View } from "react-native";
+import { PropsWithChildren, useCallback } from "react";
+import { StyleSheet, ImageBackground } from "react-native";
 import Header from "./Header";
 
 /*
@@ -8,15 +8,18 @@ import Header from "./Header";
  * @returns {JSX.Element}
  */
 const AppPage = (props: PropsWithChildren): JSX.Element => {
-    return (<ImageBackground
-        source={require('@/assets/images/background.jpg')}
-        style={styles.container}
-        resizeMode="cover"
-    >
-        <Header />
-        {props.children}
-    </ImageBackground>);
-}
+
+    return (
+        <ImageBackground
+            source={require('@/assets/images/background.jpg')}
+            style={styles.container}
+            resizeMode="cover"
+        >
+            <Header />
+            {props.children}
+        </ImageBackground>
+    );
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -28,13 +31,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         padding: 0,
     },
-    image: {
-        width: '100%',
-        height: '100%',
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'flex-start',        
-    }
 });
 
-export default AppPage; 
+export default AppPage;
