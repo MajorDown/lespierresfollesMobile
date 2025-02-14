@@ -1,7 +1,7 @@
 export const appColors = {
   text: 'rgb(250, 235, 215)',
   background: 'rgba(127, 51, 14, 0.76)',
-  window: 'rgb(129, 123, 123)',
+  window: 'rgba(129, 123, 123, 0.5)',
   button: 'rgb(251, 110, 94)'
 };
 
